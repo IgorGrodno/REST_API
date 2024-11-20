@@ -25,7 +25,9 @@ public class RestApiApplication {
                 User user = new User(name, name.toLowerCase() + "@domain.com");
                 userRepository.save(user);
             });
-            userRepository.findAll().forEach(System.out::println);
+            for (User user : userRepository.findAll()) {
+                System.out.println(user.getId());
+            }
         };
     }
 }
